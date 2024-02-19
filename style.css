@@ -1,0 +1,44 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("bgpro.jpg");
+}
+
+header {
+    background-color: #c8ebc4;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #253135;
+    color: rgb(246, 250, 240);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+main {
+    padding: 20px;
+    min-height: 200px;
+}
+footer{
+    background-color: #c8ebc4;
+    padding: 10px;
+    text-align: center;
+}
+
+footer {
+    margin-top: 100px;
+}

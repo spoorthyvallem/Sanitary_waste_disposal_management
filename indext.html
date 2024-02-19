@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="logopro.png" type="image/x-icon">
+    <title>Sanitary Waste Accountability Dashboard</title>
+    <div class="nav-container">
+        <div class="logo">
+            <img src="logopro.png" width="125" height="115" align="left">
+        </div>
+    <link rel="stylesheet" href="stylet.css">
+    <!-- <link rel="shortcut icon" href="logo.jpg" type="image/x-icon"> -->
+</head>
+<body>
+    <h1>Waste Disposal Accountability Dashboard</h1>
+    <div id="reportSection">
+        <h2>Report Disposal Activity</h2>
+        <label for="entityName">Entity Name:</label>
+        <input type="text" id="entityName">
+        <label for="compliance">Compliance Level:</label>
+        <select id="compliance">
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+        <button onclick="reportActivity()">Report Activity</button>
+    </div>
+    <div id="ratingSection">
+        <h2>Entity Ratings</h2>
+        <ul id="ratingsList"></ul>
+    </div>
+    <div class="home-button">
+        <a href="home.html"><button>Home</button></a>
+    </div>
+    <script src="scriptt.js"></script>
+</body>
+</html>
+
+

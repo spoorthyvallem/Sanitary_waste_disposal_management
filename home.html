@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logopro.png" type="image/x-icon">
+    <title>NAARI</title>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logopro.png" alt="">
+            </div> 
+<style>
+    .nav-container {
+    text-align: center; /* Center the content of the nav-container */
+    width: 200%; /* Ensure the nav-container spans the full width of its parent */
+    padding: 20px 0; /* Add some padding above and below the nav-container for spacing */
+}
+
+.logo {
+    display: inline-block; /* Make the logo block inline to enable horizontal centering */
+    padding: 5px; /* Optional: Adds some space inside the logo container */
+}
+
+.logo img {
+    width: 250px; /* Reduce the size of the logo */
+    height: auto; /* Maintain the aspect ratio of the logo */
+}
+
+    body, html {
+    background-image: url("bg.jpg");
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Styling for the sections containing links to reports, accountability, and education */
+.report, .Accountability, .Edu {
+    display: inline-block; /* Display images side by side */
+    margin: 20px; /* Add some space around each image/link */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+
+.report img, .Accountability img, .Edu img {
+    width: 150px; /* Set a specific width for images */
+    height: auto;
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
+.report a, .Accountability a, .Edu a {
+    text-decoration: none; /* Remove underline from links */
+}
+
+/* Hover effect to scale images */
+.report img:hover, .Accountability img:hover, .Edu img:hover ,.bot img:hover{
+    transform: scale(1.1); /* Scale images up slightly on hover */
+}
+
+/* Ensure the welcoming section (.se and .banner) does not overlap with content below */
+.se + div {
+    position: relative;
+    z-index: 1;
+}
+
+/* Additional styling to adjust the layout and appearance */
+.se {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Ensure content below the banner is visible and not covered */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style adjustments for spacing and alignment */
+.report, .Accountability, .Edu,.bot {
+    margin-top: 20px;
+}
+
+</style>
+</head>
+<body>
+    <section class="se">
+        <div class="banner">
+            <h1>NAARI , Welcomes you...</h1>
+        </div>
+    </section>
+    <!-- <h1>NAARI ,welcomes you.....</h1> -->
+    <div class="report">
+    <a href="indexrt.html">
+        <img src="https://icon-library.com/images/reports-icon/reports-icon-19.jpg"  height="200px" alt="Reporting">
+    </a>
+    <P>Reporting</P>
+    </div>
+    <div class="Accountability">
+        <a href="indext.html">
+            <img src="Accountabi.png"  height="200px" alt="Accountability">
+        </a>
+        <p>Accountability </p>
+        </div>
+        <div class="Edu">
+            <a href="index.html">
+                <img src="resources.png"  height="200px" alt="Educating">
+            </a>
+            <p>Resources</p>
+            </div>
+            <div class="bot">
+                <a href="bot.html">
+                    <img src="chatbot.png"  height="200px" alt="ChatBot">
+                </a>
+                <p>ChatBot</p>
+                </div>
+            
+            
+
+    
+</body>
+</html>

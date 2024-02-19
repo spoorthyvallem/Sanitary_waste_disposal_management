@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logopro.png" type="image/x-icon">
+    <title>Sanitary Waste Tracking Prototype</title>
+    <div class="nav-container">
+        <div class="logo">
+            <img src="logopro.png" width="125" height="115" align="left">
+        </div> 
+    
+    <style>
+        /* Add your CSS styling here */body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"],
+select {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 16px); /* Adjust input width considering padding */
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#chartContainer {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+
+    </style>
+</head>
+<body background="bgpro.jpg">
+    <h1>Sanitary Waste Reporting System</h1>
+    <form id="wasteReportForm">
+        <label for="wasteType">Type of Waste:</label>
+        <select id="wasteType">
+            <option value="pad">Sanitary Pad</option>
+            <option value="tampon">Tampon</option>
+            <option value="Cups">Cups</option>
+            <option value="other">Other</option>
+        </select>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="1" value="1">
+        <button type="submit">Report Disposal</button>
+    </form>
+    <h2>Tracked Disposals</h2>
+    <div id="trackedDisposals"></div>
+    <div class="home-button">
+        <a href="home.html"><button>Home</button></a>
+    </div>
+
+    <script>
+        // JavaScript code will go here
+        document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('wasteReportForm');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const wasteType = document.getElementById('wasteType').value;
+        const quantity = document.getElementById('quantity').value;
+        reportDisposal(wasteType, quantity);
+    });
+
+    displayTrackedDisposals();
+});
+
+function reportDisposal(wasteType, quantity) {
+    // Retrieve existing disposals from Local Storage
+    const disposals = JSON.parse(localStorage.getItem('disposals')) || [];
+    const newDisposal = { wasteType, quantity, date: new Date().toISOString() };
+    disposals.push(newDisposal);
+    localStorage.setItem('disposals', JSON.stringify(disposals));
+    displayTrackedDisposals();
+}
+
+function displayTrackedDisposals() {
+    const disposals = JSON.parse(localStorage.getItem('disposals')) || [];
+    const disposalContainer = document.getElementById('trackedDisposals');
+    disposalContainer.innerHTML = ''; // Clear existing content
+    disposals.forEach(disposal => {
+        const disposalElement = document.createElement('div');
+        disposalElement.textContent = `Type: ${disposal.wasteType}, Quantity: ${disposal.quantity}, Date: ${new Date(disposal.date).toLocaleString()}`;
+        disposalContainer.appendChild(disposalElement);
+    });
+}
+
+    </script>
+</body>
+</html>
